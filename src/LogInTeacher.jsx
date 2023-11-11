@@ -6,12 +6,29 @@ import {
   Input,
   Button,
   InputGroup,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { useState } from "react";
+import { AlertDialogIncomplete } from "./AlertDialog";
 
 export function LogInTeacher() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
+
+  const [valueUser, setValueUser] = useState("");
+  const [valuePassword, setValuePassword] = useState("");
+  const handleChangeUser = (event) => setValueUser(event.target.value);
+  const handleChangePassword = (event) => setValuePassword(event.target.value);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (valueUser === "" || valuePassword === "") {
+      onOpen();
+      return;
+    }
+  };
   return (
     <>
       <div className="flex border-2 h-screen">
@@ -19,12 +36,15 @@ export function LogInTeacher() {
           <h1 className="text-3xl font-bold mb-20 w-full text-center">
             Iniciar sesión como docente
           </h1>
+          <AlertDialogIncomplete isOpen={isOpen} onClose={onClose} />
           <FormControl>
             <FormLabel>Usuario</FormLabel>
             <Input
               type="number"
               placeholder="Introduce tu nombre de usuario"
               focusBorderColor="guinda.800"
+              onChange={handleChangeUser}
+              value={valueUser}
             />
           </FormControl>
           <div className="h-10"></div>
@@ -36,6 +56,8 @@ export function LogInTeacher() {
                 type={show ? "text" : "password"}
                 placeholder="Introduce tu contraseña"
                 focusBorderColor="guinda.800"
+                onChange={handleChangePassword}
+                value={valuePassword}
               />
               <InputRightElement width="5.5rem">
                 <Button
@@ -58,6 +80,7 @@ export function LogInTeacher() {
               _hover={{ bg: "guinda.400" }}
               variant="solid"
               className="w-1/2"
+              onClick={handleSubmit}
             >
               Iniciar sesión
             </Button>
