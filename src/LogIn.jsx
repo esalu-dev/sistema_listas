@@ -50,6 +50,7 @@ export function LogIn() {
                   size="sm"
                   onClick={handleClick}
                   bg="guinda.100"
+                  _hover={{ bg: "guinda.200" }}
                 >
                   {show ? "Ocultar" : "Mostrar"}
                 </Button>
@@ -61,6 +62,7 @@ export function LogIn() {
             <Button
               color="white"
               bg="guinda.900"
+              _hover={{ bg: "guinda.400" }}
               variant="solid"
               className="w-1/2"
             >
