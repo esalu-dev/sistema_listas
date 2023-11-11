@@ -6,12 +6,29 @@ import {
   Input,
   Button,
   InputGroup,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { useState } from "react";
+import { AlertDialogIncomplete } from "./AlertDialog";
 
 export function LogInStudents() {
   const [show, setShow] = useState(false);
-  const handleClick = () => setShow(!show);
+  const handleShow = () => setShow(!show);
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const [valueNumber, setValueNumber] = useState("");
+  const [valuePassword, setValuePassword] = useState("");
+  const handleChangeNumber = (event) => setValueNumber(event.target.value);
+  const handleChangePassword = (event) => setValuePassword(event.target.value);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (valueNumber === "" || valuePassword === "") {
+      onOpen();
+      return;
+    }
+  };
+
   return (
     <>
       <div className="flex border-2 h-screen ">
@@ -22,16 +39,19 @@ export function LogInStudents() {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="px-28 w-1/2 flex flex-col justify-center max-lg:w-full">
+        <div className="px-28 w-1/2 flex flex-col justify-center max-lg:w-full max-lg:px-10 ">
           <h1 className="text-3xl font-bold mb-20 w-full text-center">
             Iniciar sesión como estudiante
           </h1>
+          <AlertDialogIncomplete isOpen={isOpen} onClose={onClose} />
           <FormControl>
             <FormLabel>Número de control</FormLabel>
             <Input
               type="number"
               placeholder="Introduce tu número de control"
               focusBorderColor="guinda.800"
+              onChange={handleChangeNumber}
+              value={valueNumber}
             />
           </FormControl>
           <div className="h-10"></div>
@@ -43,12 +63,14 @@ export function LogInStudents() {
                 type={show ? "text" : "password"}
                 placeholder="Introduce tu contraseña"
                 focusBorderColor="guinda.800"
+                onChange={handleChangePassword}
+                value={valuePassword}
               />
               <InputRightElement width="5.5rem">
                 <Button
                   h="1.75rem"
                   size="sm"
-                  onClick={handleClick}
+                  onClick={handleShow}
                   bg="guinda.100"
                   _hover={{ bg: "guinda.200" }}
                 >
@@ -63,8 +85,10 @@ export function LogInStudents() {
               color="white"
               bg="guinda.900"
               _hover={{ bg: "guinda.400" }}
+              _active={{ bg: "guinda.950" }}
               variant="solid"
               className="w-1/2"
+              onClick={handleSubmit}
             >
               Iniciar sesión
             </Button>
