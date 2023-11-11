@@ -1,9 +1,10 @@
-import { LogIn } from "./LogInTeacher";
+import { LogInTeacher } from "./LogInTeacher";
+import { LogInStudents } from "./LogInStudents";
 
 function App() {
   return (
     <>
-      <LogIn />
+      <LogInTeacher />
     </>
   );
 }

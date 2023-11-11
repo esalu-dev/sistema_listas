@@ -9,13 +9,13 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 
-export function LogIn() {
+export function LogInTeacher() {
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
   return (
     <>
       <div className="flex border-2 h-screen">
-        <div className="px-28 w-1/2 flex flex-col justify-center">
+        <div className="px-28 w-1/2 flex flex-col justify-center max-lg:w-full">
           <h1 className="text-3xl font-bold mb-20 w-full text-center">
             Iniciar sesión como docente
           </h1>
@@ -51,7 +51,7 @@ export function LogIn() {
             </InputGroup>
             <FormHelperText>No compartas tu contraseña</FormHelperText>
           </FormControl>
-          <div className="w-full flex mt-20 justify-evenly gap-10">
+          <div className="w-full flex mt-20 justify-evenly gap-10 ">
             <Button
               color="white"
               bg="guinda.900"
@@ -66,7 +66,7 @@ export function LogIn() {
             </Button>
           </div>
         </div>
-        <div className="flex-1">
+        <div className="flex-1 max-lg:hidden">
           <img
             src="https://yt3.googleusercontent.com/ytc/AOPolaQ7EAFn40IdxX_8VP-UE3e65XxPsTdyL6l-vPWzXg=s900-c-k-c0x00ffffff-no-rj"
             alt=""
