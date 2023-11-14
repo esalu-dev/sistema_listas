@@ -57,6 +57,8 @@ export function LogInStudents() {
             num_control: estudiante.num_control,
             imgUrl: estudiante.imgUrl,
             nombre: estudiante.nombre,
+            paterno: estudiante.apellido_paterno,
+            materno: estudiante.apellido_materno,
             semestre: estudiante.semestre,
             carrera: estudiante.carrera,
           },
