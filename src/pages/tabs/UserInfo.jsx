@@ -7,9 +7,11 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { ModalHorario } from "../modal/ModalHorario";
+import { useLocation } from "react-router-dom";
 
 export function UserInfo() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const location = useLocation();
 
   const handleClick = () => {
     onOpen();
@@ -25,22 +27,23 @@ export function UserInfo() {
         <CardBody className="flex flex-col items-center gap-12">
           <img
             className="rounded-full w-[60%]"
-            src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.30808-6/339915621_771195961028405_8541119965884114760_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGsRPg4tp3zSZffXNZPLXX6SMPn5IkeCR5Iw-fkiR4JHg6kDITFahQZ_19eF7VOFv2_mpKzMJI9UJxy3a1tC5uN&_nc_ohc=RvM7vTJLDFkAX8knDNc&_nc_ht=scontent-dfw5-1.xx&oh=00_AfAapQ7DGa1EtgYydu-703SKne7EQGt1GK76BwKIimoDGg&oe=65567E02"
+            // src="https://scontent-dfw5-1.xx.fbcdn.net/v/t39.30808-6/339915621_771195961028405_8541119965884114760_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGsRPg4tp3zSZffXNZPLXX6SMPn5IkeCR5Iw-fkiR4JHg6kDITFahQZ_19eF7VOFv2_mpKzMJI9UJxy3a1tC5uN&_nc_ohc=RvM7vTJLDFkAX8knDNc&_nc_ht=scontent-dfw5-1.xx&oh=00_AfAapQ7DGa1EtgYydu-703SKne7EQGt1GK76BwKIimoDGg&oe=65567E02"
+            src={location.state.imgUrl}
           />
         </CardBody>
         <CardFooter>
           <div className="flex flex-col text-center w-full">
             <h2 className="w-full text-center  text-xl font-bold">
-              Ricardo Mier Arellano
+              {location.state.nombre}
             </h2>
             <p>
-              Núm. control: <strong>19040751</strong>
+              Núm. control: <strong>{location.state.numControl}</strong>
             </p>
             <p>
-              Semestre: <strong>12</strong>
+              Semestre: <strong>{location.state.semestre}</strong>
             </p>
             <p>
-              Carrera: <strong>Ingeniería Civil</strong>
+              Carrera: <strong>{location.state.carrera}</strong>
             </p>
           </div>
         </CardFooter>

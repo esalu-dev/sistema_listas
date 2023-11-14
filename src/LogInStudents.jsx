@@ -52,7 +52,15 @@ export function LogInStudents() {
           body: "La contraseña es incorrecta",
         };
       } else {
-        navigate("/students/dashboard");
+        navigate("/students/dashboard", {
+          state: {
+            num_control: estudiante.num_control,
+            imgUrl: estudiante.imgUrl,
+            nombre: estudiante.nombre,
+            semestre: estudiante.semestre,
+            carrera: estudiante.carrera,
+          },
+        });
         return;
       }
     }

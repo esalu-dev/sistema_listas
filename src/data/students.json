@@ -8,22 +8,7 @@
       "apellido_materno": "Luján",
       "carrera": "Ingeniería en Sistemas Computacionales",
       "semestre": "3",
-      "materias_acreditadas": [
-        {
-          "nombre": "Fundamentos de Programación",
-          "calificacion": "10",
-          "maestro": "Cristabebe"
-        }
-      ]
-    },
-    {
-      "num_control": "22041199",
-      "password": "password",
-      "nombre": "Emilio",
-      "apellido_paterno": "Salas",
-      "apellido_materno": "Luján",
-      "carrera": "Ingeniería en Sistemas Computacionales",
-      "semestre": "3",
+      "imgUrl": "https://avatars.githubusercontent.com/u/66653779?v=4",
       "materias_acreditadas": [
         {
           "nombre": "Fundamentos de Programación",
