@@ -11,12 +11,14 @@ import {
 import { useState } from "react";
 import { AlertDialogIncomplete } from "./AlertDialog";
 import datos from "./data/students.json";
+import { useNavigate } from "react-router-dom";
 
 export function LogInStudents() {
   const estudiantes = datos.estudiantes;
   const [show, setShow] = useState(false);
   const handleShow = () => setShow(!show);
   const { isOpen, onOpen, onClose } = useDisclosure();
+  let navigate = useNavigate();
 
   const [valueNumber, setValueNumber] = useState("");
   const [valuePassword, setValuePassword] = useState("");
@@ -50,7 +52,7 @@ export function LogInStudents() {
           body: "La contraseña es incorrecta",
         };
       } else {
-        alert("Bienvenido " + estudiante.nombre);
+        navigate("/students/dashboard");
         return;
       }
     }
@@ -127,7 +129,12 @@ export function LogInStudents() {
             >
               Iniciar sesión
             </Button>
-            <Button colorScheme="guinda" variant="outline" className="w-1/2">
+            <Button
+              colorScheme="guinda"
+              variant="outline"
+              className="w-1/2"
+              onClick={() => navigate("/")}
+            >
               Regresar
             </Button>
           </div>

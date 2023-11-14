@@ -7,8 +7,11 @@ import {
   Heading,
   Text,
 } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 export function LandingPage() {
+  let navigate = useNavigate();
+
   return (
     <section className="w-screen h-screen">
       <header className="flex px-10 py-6 justify-between">
@@ -49,7 +52,9 @@ export function LandingPage() {
             <img src="" alt="" srcSet="" />
           </CardBody>
           <CardFooter>
-            <Button colorScheme="guinda">Entrar</Button>
+            <Button colorScheme="guinda" onClick={() => navigate("/students")}>
+              Entrar
+            </Button>
           </CardFooter>
         </Card>
         <Card align="center" className="flex-1">
