@@ -10,8 +10,10 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { AlertDialogIncomplete } from "./AlertDialog";
+import datos from "./data/students.json";
 
 export function LogInStudents() {
+  const estudiantes = datos.estudiantes;
   const [show, setShow] = useState(false);
   const handleShow = () => setShow(!show);
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -20,13 +22,41 @@ export function LogInStudents() {
   const [valuePassword, setValuePassword] = useState("");
   const handleChangeNumber = (event) => setValueNumber(event.target.value);
   const handleChangePassword = (event) => setValuePassword(event.target.value);
+  const [alertData, setAlertData] = useState({ title: "", body: "" });
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    let newAlertData = { title: "", body: "" };
+
     if (valueNumber === "" || valuePassword === "") {
-      onOpen();
-      return;
+      newAlertData = {
+        title: "Datos incompletos",
+        body: "Por favor, llena todos los campos",
+      };
+    } else {
+      const estudiante = estudiantes.find(
+        (estudiante) => estudiante.num_control === valueNumber
+      );
+
+      if (estudiante === undefined) {
+        newAlertData = {
+          title: "Datos incorrectos",
+          body: "El número de control no existe",
+        };
+      } else if (estudiante.password !== valuePassword) {
+        newAlertData = {
+          title: "Datos incorrectos",
+          body: "La contraseña es incorrecta",
+        };
+      } else {
+        alert("Bienvenido " + estudiante.nombre);
+        return;
+      }
     }
+
+    setAlertData(newAlertData);
+    onOpen();
   };
 
   return (
@@ -43,7 +73,12 @@ export function LogInStudents() {
           <h1 className="text-3xl font-bold mb-20 w-full text-center">
             Iniciar sesión como estudiante
           </h1>
-          <AlertDialogIncomplete isOpen={isOpen} onClose={onClose} />
+          <AlertDialogIncomplete
+            isOpen={isOpen}
+            onClose={onClose}
+            title={alertData.title}
+            body={alertData.body}
+          />
           <FormControl>
             <FormLabel>Número de control</FormLabel>
             <Input

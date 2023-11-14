@@ -1,0 +1,85 @@
+{
+  "materias": [
+    {
+      "nombre": "Programación orientada a objetos",
+      "profesor": "Juan Perez",
+      "semestre": "2",
+      "carrera": "Ingeniería en Sistemas Computacionales",
+      "dias": "Lunes, Martes, Miercoles, Jueves, Viernes",
+      "hora": "10:00 - 11:00",
+      "aula": "SC1"
+    },
+    {
+      "nombre": "Fundamentos de programación",
+      "profesor": "Irma Selene",
+      "semestre": "1",
+      "carrera": "Ingeniería en Sistemas Computacionales",
+      "dias": "Lunes, Martes, Miercoles, Jueves, Viernes",
+      "hora": "9:00 - 10:00",
+      "aula": "SC2"
+    },
+    {
+      "nombre": "Estructura de datos",
+      "profesor": "Jeorgina Calzada",
+      "semestre": "3",
+      "carrera": "Ingeniería en Sistemas Computacionales",
+      "dias": "Lunes, Martes, Miercoles, Jueves, Viernes",
+      "hora": "8:00 - 9:00",
+      "aula": "SC3"
+    },
+    {
+      "nombre": "Cálculo Diferencial",
+      "profesor": "María de la Luz",
+      "semestre": "1",
+      "carrera": "Ingeniería en Sistemas Computacionales",
+      "dias": "Lunes, Martes, Miercoles, Jueves, Viernes",
+      "hora": "8:00 - 9:00",
+      "aula": "SC1"
+    },
+    {
+      "nombre": "Taller de ética",
+      "profesor": "Angie Alarcón",
+      "semestre": "1",
+      "carrera": "Ingeniería en Sistemas Computacionales",
+      "dias": "Lunes, Martes, Miercoles, Jueves",
+      "hora": "11:00 - 12:00",
+      "aula": "SC1"
+    },
+    {
+      "nombre": "Álgebra lineal",
+      "profesor": "Reyes Martínez",
+      "semestre": "2",
+      "carrera": "Ingeniería en Sistemas Computacionales",
+      "dias": "Lunes, Martes, Miercoles, Jueves, Viernes",
+      "hora": "11:00 - 12:00",
+      "aula": "SC2"
+    },
+    {
+      "nombre": "Contabilidad financiera",
+      "profesor": "Paulina Elizabeth",
+      "semestre": "2",
+      "carrera": "Ingeniería en Sistemas Computacionales",
+      "dias": "Lunes, Martes, Miercoles, Jueves",
+      "hora": "9:00 - 10:00",
+      "aula": "SC2"
+    },
+    {
+      "nombre": "Cálculo Vectorial",
+      "profesor": "Agustín Cervantes",
+      "semestre": "3",
+      "carrera": "Ingeniería en Sistemas Computacionales",
+      "dias": "Lunes, Martes, Miercoles, Jueves, Viernes",
+      "hora": "7:00 - 8:00",
+      "aula": "SC3"
+    },
+    {
+      "nombre": "Desarrollo sustentable",
+      "profesor": "Martin Leyva",
+      "semestre": "3",
+      "carrera": "Ingeniería en Sistemas Computacionales",
+      "dias": "Lunes, Martes, Miercoles, Jueves, Viernes",
+      "hora": "9:00 - 10:00",
+      "aula": "SC3"
+    }
+  ]
+}

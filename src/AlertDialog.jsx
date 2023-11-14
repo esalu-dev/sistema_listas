@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { useRef } from "react";
 
-export function AlertDialogIncomplete({ onClose, isOpen }) {
+export function AlertDialogIncomplete({ onClose, isOpen, title, body }) {
   const cancelRef = useRef();
 
   return (
@@ -22,10 +22,10 @@ export function AlertDialogIncomplete({ onClose, isOpen }) {
         <AlertDialogOverlay>
           <AlertDialogContent>
             <AlertDialogHeader fontSize="lg" fontWeight="bold">
-              Datos incompletos
+              {title}
             </AlertDialogHeader>
 
-            <AlertDialogBody>Por favor llena todos los campos</AlertDialogBody>
+            <AlertDialogBody>{body}</AlertDialogBody>
             <AlertDialogFooter>
               <Button ref={cancelRef} onClick={onClose}>
                 OK
