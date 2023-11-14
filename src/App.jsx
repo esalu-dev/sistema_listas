@@ -1,13 +1,17 @@
 import { LogInTeacher } from "./LogInTeacher";
 import { LogInStudents } from "./LogInStudents";
 import { LandingPage } from "./LandingPage";
-import { UserDashboard } from "./pages/UserDashboard";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <>
-      <UserDashboard />
-    </>
+    <div>
+      <Routes>
+        <Route path="/" exact element={<LandingPage />} />
+        <Route path="/teacher" element={<LogInTeacher />} />
+        <Route path="/students" element={<LogInStudents />} />
+      </Routes>
+    </div>
   );
 }
 

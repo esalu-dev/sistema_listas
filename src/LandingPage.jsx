@@ -46,7 +46,7 @@ export function LandingPage() {
             <Heading size="md">Iniciar sesión como estudiante</Heading>
           </CardHeader>
           <CardBody>
-            <img src="" alt="" srcset="" />
+            <img src="" alt="" srcSet="" />
           </CardBody>
           <CardFooter>
             <Button colorScheme="guinda">Entrar</Button>
