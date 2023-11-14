@@ -7,16 +7,29 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { ModalHorario } from "../modal/ModalHorario";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Student } from "../../types/Student";
 
 export function UserInfo() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const location = useLocation();
+  const navigate = useNavigate();
 
   const handleClick = () => {
     onOpen();
   };
+
+  if (location.state === null) {
+    setTimeout(() => {
+      navigate("/");
+    }, 5000);
+    return (
+      <>
+        <Text>Por favor, inicia sesión antes</Text>
+        <Text>Redireccionando en 5 segundos</Text>
+      </>
+    );
+  }
 
   const student = new Student(
     location.state.nombre,
