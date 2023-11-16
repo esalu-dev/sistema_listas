@@ -5,6 +5,7 @@ import {
   Tab,
   TabPanel,
   Text,
+  Heading,
 } from "@chakra-ui/react";
 import { UserInfo } from "./tabs/UserInfo";
 import { UserKardex } from "./tabs/UserKardex";
@@ -21,8 +22,13 @@ export function UserDashboard() {
     }, 5000);
     return (
       <>
-        <Text>Por favor, inicia sesión antes</Text>
-        <Text>Redireccionando en 5 segundos</Text>
+        <div className="w-screen h-screen flex flex-col justify-center gap-3 items-center">
+          <Heading color={"guinda.900"} size={"3xl"}>
+            404
+          </Heading>
+          <Text>No has iniciado sesión:(</Text>
+          <Text>Redireccionando en 5 segundos</Text>
+        </div>
       </>
     );
   }
