@@ -11,9 +11,90 @@
       "imgUrl": "https://avatars.githubusercontent.com/u/66653779?v=4",
       "materias_acreditadas": [
         {
+          "nombre": "Fundamentos de programación",
+          "calificacion": "100"
+        },
+        {
+          "nombre": "Cálculo Diferencial",
+          "calificacion": "60"
+        },
+        {
+          "nombre": "Taller de ética",
+          "calificacion": "50"
+        },
+        {
+          "nombre": "Programación orientada a objetos",
+          "calificacion": "100"
+        },
+        {
+          "nombre": "Álgebra lineal",
+          "calificacion": "0"
+        },
+        {
+          "nombre": "Contabilidad financiera",
+          "calificacion": "95"
+        }
+      ],
+      "horario": [
+        {
+          "nombre": "Estructura de datos",
+          "creditos": "5",
+          "horario": "8:00-9:00",
+          "salon": "SC-3"
+        },
+        {
+          "nombre": "Desarrollo sustentable",
+          "creditos": "4",
+          "horario": "9:00-10:00",
+          "salon": "SC-3"
+        },
+        {
+          "nombre": "Cálculo Vectorial",
+          "creditos": "5",
+          "horario": "7:00-8:00",
+          "salon": "SC-3"
+        }
+      ]
+    },
+    {
+      "num_control": "22041104",
+      "password": "password",
+      "nombre": "Victoria",
+      "apellido_paterno": "Bueno",
+      "apellido_materno": "Mijares",
+      "carrera": "Ingeniería en Sistemas Computacionales",
+      "semestre": "3",
+      "imgUrl": "https://c-cl.cdn.smule.com/rs-s78/arr/de/d4/3e694568-ee2f-4a5c-b135-845441c2373e.jpg",
+      "materias_acreditadas": [
+        {
           "nombre": "Fundamentos de Programación",
           "calificacion": "10",
           "maestro": "Cristabebe"
+        }
+      ],
+      "horario": []
+    },
+    {
+      "num_control": "22041515",
+      "password": "password",
+      "nombre": "Álvaro",
+      "apellido_paterno": "Aceval",
+      "apellido_materno": "Morales",
+      "carrera": "Ingeniería Informática",
+      "semestre": "3",
+      "imgUrl": "https://m.media-amazon.com/images/I/41T6BE4MxUL.jpg",
+      "materias_acreditadas": [
+        {
+          "nombre": "Fundamentos de Programación",
+          "calificacion": "10"
+        }
+      ],
+      "horario": [
+        {
+          "nombre": "Administración para Informática",
+          "creditos": "4",
+          "horario": "9:00-10:00",
+          "salon": "SC-3"
         }
       ]
     }

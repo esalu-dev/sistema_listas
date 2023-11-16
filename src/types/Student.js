@@ -6,7 +6,9 @@ export class Student {
     carrera,
     semestre,
     num_control,
-    imgUrl
+    imgUrl,
+    horario,
+    materias_acreditadas
   ) {
     this.nombre = nombre;
     this.paterno = paterno;
@@ -15,6 +17,8 @@ export class Student {
     this.semestre = semestre;
     this.num_control = num_control;
     this.imgUrl = imgUrl;
+    this.horario = horario;
+    this.materias_acreditadas = materias_acreditadas;
   }
 
   getFullName() {

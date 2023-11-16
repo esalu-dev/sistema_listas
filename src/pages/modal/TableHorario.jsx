@@ -9,7 +9,7 @@ import {
   TableContainer,
 } from "@chakra-ui/react";
 
-export function TableHorario() {
+export function TableHorario({ horario }) {
   return (
     <TableContainer>
       <Table variant="striped" colorScheme="guinda">
@@ -25,30 +25,34 @@ export function TableHorario() {
           </Tr>
         </Thead>
         <Tbody>
-          <Tr>
-            <Td>Fundamentos de programación</Td>
-            <Td>9:00-10:00</Td>
-            <Td>9:00-10:00</Td>
-            <Td>9:00-10:00</Td>
-            <Td>9:00-10:00</Td>
-            <Td>9:00-10:00</Td>
-          </Tr>
-          <Tr>
-            <Td>Cálculo Diferencial</Td>
-            <Td>8:00-9:00</Td>
-            <Td>8:00-9:00</Td>
-            <Td>8:00-9:00</Td>
-            <Td>8:00-9:00</Td>
-            <Td>8:00-9:00</Td>
-          </Tr>
-          <Tr>
-            <Td>Taller de ética</Td>
-            <Td>11:00-12:00</Td>
-            <Td>11:00-12:00</Td>
-            <Td>11:00-12:00</Td>
-            <Td>11:00-12:00</Td>
-            <Td>11:00-12:00</Td>
-          </Tr>
+          {horario.map((materia) => {
+            return (
+              <Tr key={materia.nombre}>
+                <Td>{materia.nombre}</Td>
+                {materia.creditos === "5" && (
+                  <>
+                    {[...Array(5)].map((_, i) => (
+                      <Td key={i}>
+                        <p className="font-bold">{materia.horario}</p>
+                        <p>{materia.salon}</p>
+                      </Td>
+                    ))}
+                  </>
+                )}
+                {materia.creditos === "4" && (
+                  <>
+                    {[...Array(4)].map((_, i) => (
+                      <Td key={i}>
+                        <p className="font-bold">{materia.horario}</p>
+                        <p>{materia.salon}</p>
+                      </Td>
+                    ))}
+                    <Td></Td>
+                  </>
+                )}
+              </Tr>
+            );
+          })}
         </Tbody>
       </Table>
     </TableContainer>

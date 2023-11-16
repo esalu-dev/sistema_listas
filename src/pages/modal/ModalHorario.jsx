@@ -7,10 +7,11 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
+  Text,
 } from "@chakra-ui/react";
 import { TableHorario } from "./TableHorario";
 
-export function ModalHorario({ isOpen, onClose }) {
+export function ModalHorario({ isOpen, onClose, horario }) {
   return (
     <Modal onClose={onClose} size={"full"} isOpen={isOpen}>
       <ModalOverlay />
@@ -18,7 +19,10 @@ export function ModalHorario({ isOpen, onClose }) {
         <ModalHeader>Horario</ModalHeader>
         <ModalCloseButton />
         <ModalBody>
-          <TableHorario />
+          {horario.length === 0 && (
+            <Text fontSize={"2xl"}>No tienes materias inscritas</Text>
+          )}
+          {horario.length !== 0 && <TableHorario horario={horario} />}
         </ModalBody>
         <ModalFooter>
           <Button onClick={onClose}>Volver</Button>

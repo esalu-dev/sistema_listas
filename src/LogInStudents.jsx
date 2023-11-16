@@ -61,6 +61,8 @@ export function LogInStudents() {
             materno: estudiante.apellido_materno,
             semestre: estudiante.semestre,
             carrera: estudiante.carrera,
+            horario: estudiante.horario,
+            materias_acreditadas: estudiante.materias_acreditadas,
           },
         });
         return;

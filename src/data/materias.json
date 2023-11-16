@@ -80,6 +80,249 @@
       "dias": "Lunes, Martes, Miercoles, Jueves, Viernes",
       "hora": "9:00 - 10:00",
       "aula": "SC3"
+    },
+    {
+      "nombre": "Administración para Informática",
+      "profesor": "Cesar López Mijares",
+      "semestre": "1",
+      "carrera": "Ingeniería Informática",
+      "dias": "Lunes, Martes, Miercoles, Jueves, Viernes",
+      "hora": "7:00 - 8:00",
+      "aula": "SC8"
+    },
+    {
+      "nombre": "Fundamentos de programación",
+      "profesor": "Alexander Henderson",
+      "semestre": "1",
+      "carrera": "Ingeniería Informática",
+      "dias": "Lunes, Martes, Miercoles, Jueves, Viernes",
+      "hora": "8:00 - 9:00",
+      "aula": "LC3"
+    },
+    {
+      "nombre": "Desarrollo sustentable",
+      "profesor": "Martin Leyva",
+      "semestre": "1",
+      "carrera": "Ingeniería Informática",
+      "dias": "Lunes, Martes, Miercoles, Jueves, Viernes",
+      "hora": "10:00 - 11:00",
+      "aula": "SC9"
+    },
+    {
+      "nombre": "Matemáticas Discretas",
+      "profesor": "Gustavo Higareda",
+      "semestre": "2",
+      "carrera": "Ingeniería Informática",
+      "dias": "Lunes, Martes, Miercoles, Jueves, Viernes",
+      "hora": "13:00 - 14:00",
+      "aula": "SC7"
+    },
+    {
+      "nombre": "Cálculo Integral",
+      "profesor": "Luz Elena García",
+      "semestre": "2",
+      "carrera": "Ingeniería Informática",
+      "dias": "Lunes, Martes, Miercoles, Jueves, Viernes",
+      "hora": "11:00 - 12:00",
+      "aula": "SC6"
+    },
+    {
+      "nombre": "Física para Informática",
+      "profesor": "Eduardo Rodríguez",
+      "semestre": "2",
+      "carrera": "Ingeniería Informática",
+      "dias": "Lunes, Martes, Miercoles, Jueves, Viernes",
+      "hora": "7:00 - 8:00",
+      "aula": "SC11"
+    },
+    {
+      "nombre": "Sistemas electrónicos para Informática",
+      "profesor": "Rúben Burgos Fuentes",
+      "semestre": "3",
+      "carrera": "Ingeniería Informática",
+      "dias": "Lunes, Martes, Miercoles, Jueves",
+      "hora": "12:00 - 13:00",
+      "aula": "SC1"
+    },
+    {
+      "nombre": "Probabilidad y estadística",
+      "profesor": "Rúben Pizarro",
+      "semestre": "3",
+      "carrera": "Ingeniería Informática",
+      "dias": "Lunes, Martes, Miercoles, Jueves",
+      "hora": "8:00 - 9:00",
+      "aula": "SC5"
+    },
+    {
+      "nombre": "Costos Empresariales",
+      "profesor": "Laura Guadalapue Butzmann Álvarez",
+      "semestre": "3",
+      "carrera": "Ingeniería Informática",
+      "dias": "Lunes, Martes, Miercoles, Jueves",
+      "hora": "10:00 - 11:00",
+      "aula": "SC2"
+    },
+    {
+      "nombre": "Fundamentos de programación",
+      "profesor": "Alexander Handerson",
+      "semestre": "1",
+      "carrera": "Ingeniería en Tecnologías de la Información",
+      "dias": "Lunes, Martes, Miercoles, Jueves, Viernes",
+      "hora": "7:00 - 8:00",
+      "aula": "LC2"
+    },
+    {
+      "nombre": "Introducción a las Tic´s",
+      "profesor": "Mónica Abigail Rosales Gamboa",
+      "semestre": "1",
+      "carrera": "Ingeniería en Tecnologías de la Información",
+      "dias": "Lunes, Martes, Miercoles, Jueves, Viernes",
+      "hora": "8:00 - 9:00",
+      "aula": "LC1"
+    },
+    {
+      "nombre": "Fundamentos de investigación",
+      "profesor": "María del Rayo Zamora",
+      "semestre": "1",
+      "carrera": "Ingeniería en Tecnologías de la Información",
+      "dias": "Lunes, Martes, Miercoles, Jueves",
+      "hora": "12:00 - 13:00",
+      "aula": "SC8"
+    },
+    {
+      "nombre": "Contabilidad y costos",
+      "profesor": "Sofía Martínez Jímenez",
+      "semestre": "2",
+      "carrera": "Ingeniería en Tecnologías de la Información",
+      "dias": "Lunes, Martes, Miercoles, Jueves",
+      "hora": "14:00 - 15:00",
+      "aula": "SC7"
+    },
+    {
+      "nombre": "Álgebra lineal",
+      "profesor": "Reyes Martínez",
+      "semestre": "2",
+      "carrera": "Ingeniería en Tecnologías de la Información",
+      "dias": "Lunes, Martes, Miercoles, Jueves, Viernes",
+      "hora": "10:00 - 11:00",
+      "aula": "SC4"
+    },
+    {
+      "nombre": "Programación orientada a objetos",
+      "profesor": "Irma Selene",
+      "semestre": "2",
+      "carrera": "Ingeniería en Tecnologías de la Información",
+      "dias": "Lunes, Martes, Miercoles, Jueves, Viernes",
+      "hora": "10:00 - 11:00",
+      "aula": "LC1"
+    },
+    {
+      "nombre": "Matemáticas para la toma de decsiones",
+      "profesor": "César Gárces",
+      "semestre": "3",
+      "carrera": "Ingeniería en Tecnologías de la Información",
+      "dias": "Lunes, Martes, Miercoles, Jueves",
+      "hora": "8:00 - 9:00",
+      "aula": "SC7"
+    },
+    {
+      "nombre": "Fundamentos de Bases de datos",
+      "profesor": "Gabriel Arturo Lugo Morales",
+      "semestre": "3",
+      "carrera": "Ingeniería en Tecnologías de la Información",
+      "dias": "Lunes, Martes, Miercoles, Jueves, Viernes",
+      "hora": "12:00 - 13:00",
+      "aula": "SC6"
+    },
+    {
+      "nombre": "Electricidad y magenestismo",
+      "profesor": "Arturo Elias Ornelas",
+      "semestre": "3",
+      "carrera": "Ingeniería en Tecnologías de la Información",
+      "dias": "Lunes, Martes, Miercoles, Jueves",
+      "hora": "13:00 - 14:00",
+      "aula": "SC1O"
+    },
+    {
+      "nombre": "Dibujo Industrial",
+      "profesor": "Victor Alejandro Blanco Gallegos",
+      "semestre": "1",
+      "carrera": "Ingeniería Industrial",
+      "dias": "Lunes, Martes, Miercoles, Jueves, Viernes",
+      "hora": "10:00 - 11:00",
+      "aula": "ID1"
+    },
+    {
+      "nombre": "Fundamentos de investigación",
+      "profesor": "María del Rayo Zamora",
+      "semestre": "1",
+      "carrera": "Ingeniería Industrial",
+      "dias": "Lunes, Martes, Miercoles, Jueves",
+      "hora": "7:00 - 8:00",
+      "aula": "ID1"
+    },
+    {
+      "nombre": "Taller de Herramientas Intelectuales",
+      "profesor": "José Ángel Macías",
+      "semestre": "1",
+      "carrera": "Ingeniería Industrial",
+      "dias": "Lunes, Martes, Miercoles, Jueves, Viernes",
+      "hora": "8:00 - 9:00",
+      "aula": "ID1"
+    },
+    {
+      "nombre": "Electricidad y electrónica industrial",
+      "profesor": "Pedro Herrerra Cardenas",
+      "semestre": "2",
+      "carrera": "Ingeniería Industrial",
+      "dias": "Lunes, Martes, Miercoles, Jueves, Viernes",
+      "hora": "12:00 - 13:00",
+      "aula": "ID2"
+    },
+    {
+      "nombre": "Taller de liderazgo",
+      "profesor": "Reyes Martínez",
+      "semestre": "2",
+      "carrera": "Ingeniería Industrial",
+      "dias": "Lunes, Martes, Miercoles, Jueves",
+      "hora": "13:00 - 14:00",
+      "aula": "ID1"
+    },
+    {
+      "nombre": "Propiedades de los materiales",
+      "profesor": "Miguel Ramos Soto",
+      "semestre": "2",
+      "carrera": "Ingeniería Industrial",
+      "dias": "Lunes, Martes, Miercoles, Jueves",
+      "hora": "8:00 - 9:00",
+      "aula": "LI1"
+    },
+    {
+      "nombre": "Metrología y normalización",
+      "profesor": "Carlos Díaz Pérez",
+      "semestre": "3",
+      "carrera": "Ingeniería Industrial",
+      "dias": "Lunes, Martes, Miercoles, Jueves, Viernes",
+      "hora": "9:00 - 10:00",
+      "aula": "ID3"
+    },
+    {
+      "nombre": "Economía",
+      "profesor": "Federico Cervantes Garrido",
+      "semestre": "3",
+      "carrera": "Ingeniería Industrial",
+      "dias": "Lunes, Martes, Miercoles, Jueves",
+      "hora": "8:00 - 9:00",
+      "aula": "ID3"
+    },
+    {
+      "nombre": "Álgebra Lineal",
+      "profesor": "Cristina Meraz Tinoco",
+      "semestre": "3",
+      "carrera": "Ingeniería Industrial",
+      "dias": "Lunes, Martes, Miercoles, Jueves, Viernes",
+      "hora": "14:00 - 15:00",
+      "aula": "LI2"
     }
   ]
 }
