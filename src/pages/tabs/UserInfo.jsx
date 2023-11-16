@@ -17,15 +17,17 @@ export function UserInfo({ student }) {
   };
 
   return (
-    <main className="flex p-16 h-full w-full gap-10 justify-center bg-guinda-100">
+    <main className="flex p-16 h-full w-full gap-10 justify-center">
       <ModalHorario
         isOpen={isOpen}
         onClose={onClose}
         horario={student.horario}
       />
-      {/* <h2 className="text-center font-bold text-3xl absolute z-10 top-10 ">
-        Bienvenido
-      </h2> */}
+      <img
+        src={student.imgUrl}
+        alt="Fondo de foto de perfil"
+        className="absolute object-cover top-0 right-0 -z-10 transform scale-110 w-screen h-screen filter blur-[20px] back brightness-50 "
+      />
       <Card className="w-[400px] py-10">
         <CardBody className="flex flex-col items-center gap-12">
           <img className="rounded-full w-[60%]" src={student.imgUrl} />

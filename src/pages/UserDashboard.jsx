@@ -46,9 +46,9 @@ export function UserDashboard() {
   );
 
   return (
-    <main className="h-screen">
+    <main className="h-screen overflow-hidden">
       <Tabs className="h-[94%]">
-        <TabList>
+        <TabList bg={"white"}>
           <Tab>Perfil</Tab>
           <Tab>Reinscripción</Tab>
           <Tab>Kárdex de calificaciones</Tab>
