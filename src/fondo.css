@@ -1,0 +1,9 @@
+.fondo {
+  background-color: #ffffff;
+  opacity: 0.8;
+  background-image: radial-gradient(
+    #5a0202 0.9500000000000001px,
+    #ffffff 0.9500000000000001px
+  );
+  background-size: 19px 19px;
+}
