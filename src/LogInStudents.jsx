@@ -78,7 +78,7 @@ export function LogInStudents() {
       <div className="flex border-2 h-screen ">
         <div className="flex-1 max-lg:hidden">
           <img
-            src="https://scontent.fpbc5-1.fna.fbcdn.net/v/t39.30808-6/332748851_955144132562859_8004370872755606028_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGo1oQlr4AH2fBbo46ue_pKB14yv1kNLaUHXjK_WQ0tpQNeB5wnqQMTzolS4XkzCcfGNZ9k1Wkp5vqbeaQ09Fzg&_nc_ohc=lNpNg9SQSjwAX_hUPJN&_nc_oc=AQmZ9uyn15LMUprApD6TfcEZrayt1_6pk18Xu3GNTsdRNvoAEV5VS4nsZHPudwa8nBXtKGd-LRKwoq8o_pxUWoJi&_nc_ht=scontent.fpbc5-1.fna&oh=00_AfAUkiDvb5aWA2qnUd7DsUttFy4l7bVpsWh3m0Ommkn5Hg&oe=655344B0"
+            src="../assets/estudiantes_login.jpg"
             alt=""
             className="w-full h-full object-cover"
           />
