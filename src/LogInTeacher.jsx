@@ -10,9 +10,11 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { AlertDialogIncomplete } from "./AlertDialog";
+import { useNavigate } from "react-router-dom";
 
 export function LogInTeacher() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const navigate = useNavigate();
 
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
@@ -84,7 +86,14 @@ export function LogInTeacher() {
             >
               Iniciar sesión
             </Button>
-            <Button colorScheme="guinda" variant="outline" className="w-1/2">
+            <Button
+              colorScheme="guinda"
+              variant="outline"
+              className="w-1/2"
+              onClick={() => {
+                navigate("/");
+              }}
+            >
               Regresar
             </Button>
           </div>
