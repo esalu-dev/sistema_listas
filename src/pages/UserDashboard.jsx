@@ -11,6 +11,8 @@ import { UserInfo } from "./tabs/UserInfo";
 import { UserKardex } from "./tabs/UserKardex";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Student } from "../types/Student";
+import { Reinscripcion } from "./tabs/Reinscripcion";
+import { IoExitOutline } from "react-icons/io5";
 
 export function UserDashboard() {
   const location = useLocation();
@@ -59,13 +61,19 @@ export function UserDashboard() {
             <UserInfo student={student} />
           </TabPanel>
           <TabPanel>
-            <p>two!</p>
+            <Reinscripcion student={student} />
           </TabPanel>
           <TabPanel>
             <UserKardex student={student} />
           </TabPanel>
         </TabPanels>
       </Tabs>
+      <button
+        className="absolute flex items-center justify-center rounded-full w-16 h-16 text-2xl shadow-xl  bg-guinda-400  right-10 bottom-10 hover:bg-guinda-200 transition-all ease-out duration-300 hover:rotate-180"
+        onClick={() => navigate("/")}
+      >
+        <IoExitOutline />
+      </button>
     </main>
   );
 }
