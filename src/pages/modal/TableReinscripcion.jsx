@@ -9,8 +9,10 @@ import {
   TableContainer,
   Button,
 } from "@chakra-ui/react";
+import datos from "../../data/materias.json";
 
-export function TableReinscripcion() {
+export function TableReinscripcion({ semestre, carrera }) {
+  const materias = datos.materias;
   return (
     <div className="min-w-[1000px]">
       <TableContainer>
@@ -28,123 +30,57 @@ export function TableReinscripcion() {
             </Tr>
           </Thead>
           <Tbody>
-            <Tr height="120px">
-              <Td>
-                Álgebra Lineal
-                <p>
-                  <b>Reyes Martínez</b>
-                </p>
-              </Td>
-              <Td>
-                <p className="font-bold">7:00-8:00</p>
-                <p>Salón 1</p>
-              </Td>
-              <Td>
-                <p className="font-bold">7:00-8:00</p>
-                <p>Salón 1</p>
-              </Td>
-              <Td>
-                <p className="font-bold">7:00-8:00</p>
-                <p>Salón 1</p>
-              </Td>
-              <Td>
-                <p className="font-bold">7:00-8:00</p>
-                <p>Salón 1</p>
-              </Td>
-              <Td>
-                <p className="font-bold">7:00-8:00</p>
-                <p>Salón 1</p>
-              </Td>
-              <Td>
-                <Button
-                  color="white"
-                  bg="guinda.900"
-                  _hover={{ bg: "guinda.400" }}
-                  _active={{ bg: "guinda.950" }}
-                  variant="solid"
-                >
-                  Seleccionar
-                </Button>
-              </Td>
-            </Tr>
-            <Tr height="120px">
-              <Td>
-                Álgebra Lineal
-                <p>
-                  <b>Reyes Martínez</b>
-                </p>
-              </Td>
-              <Td>
-                <p className="font-bold">7:00-8:00</p>
-                <p>Salón 1</p>
-              </Td>
-              <Td>
-                <p className="font-bold">7:00-8:00</p>
-                <p>Salón 1</p>
-              </Td>
-              <Td>
-                <p className="font-bold">7:00-8:00</p>
-                <p>Salón 1</p>
-              </Td>
-              <Td>
-                <p className="font-bold">7:00-8:00</p>
-                <p>Salón 1</p>
-              </Td>
-              <Td>
-                <p className="font-bold">7:00-8:00</p>
-                <p>Salón 1</p>
-              </Td>
-              <Td>
-                <Button
-                  color="white"
-                  bg="guinda.900"
-                  _hover={{ bg: "guinda.400" }}
-                  _active={{ bg: "guinda.950" }}
-                  variant="solid"
-                >
-                  Seleccionar
-                </Button>
-              </Td>
-            </Tr>
-            <Tr height="120px">
-              <Td>
-                Álgebra Lineal
-                <p>
-                  <b>Reyes Martínez</b>
-                </p>
-              </Td>
-              <Td>
-                <p className="font-bold">7:00-8:00</p>
-                <p>Salón 1</p>
-              </Td>
-              <Td>
-                <p className="font-bold">7:00-8:00</p>
-                <p>Salón 1</p>
-              </Td>
-              <Td>
-                <p className="font-bold">7:00-8:00</p>
-                <p>Salón 1</p>
-              </Td>
-              <Td>
-                <p className="font-bold">7:00-8:00</p>
-                <p>Salón 1</p>
-              </Td>
-              <Td>
-                <p className="font-bold">7:00-8:00</p>
-                <p>Salón 1</p>
-              </Td>
-              <Td>
-                <Button
-                  color="white"
-                  bg="guinda.900"
-                  _hover={{ bg: "guinda.400" }}
-                  _active={{ bg: "guinda.950" }}
-                  variant="solid"
-                >
-                  Seleccionar
-                </Button>
-              </Td>
-            </Tr>
+            {materias.map((materia) => {
+              if (
+                materia.carrera === carrera &&
+                materia.semestre === semestre.toString()
+              ) {
+                return (
+                  <Tr key={materia.nombre} height="120px">
+                    <Td>
+                      {materia.nombre}
+                      <p>
+                        <b>{materia.profesor}</b>
+                      </p>
+                    </Td>
+                    {materia.dias ===
+                      "Lunes, Martes, Miercoles, Jueves, Viernes" && (
+                      <>
+                        {[...Array(5)].map((_, i) => (
+                          <Td key={i}>
+                            <p className="font-bold">{materia.hora}</p>
+                            <p>{materia.aula}</p>
+                          </Td>
+                        ))}
+                      </>
+                    )}
+                    {materia.dias === "Lunes, Martes, Miercoles, Jueves" && (
+                      <>
+                        {[...Array(4)].map((_, i) => (
+                          <Td key={i}>
+                            <p className="font-bold">{materia.hora}</p>
+                            <p>{materia.aula}</p>
+                          </Td>
+                        ))}
+                        <Td></Td>
+                      </>
+                    )}
+
+                    <Td>
+                      <Button
+                        color="white"
+                        bg="guinda.900"
+                        _hover={{ bg: "guinda.400" }}
+                        _active={{ bg: "guinda.950" }}
+                        variant="solid"
+                      >
+                        Seleccionar
+                      </Button>
+                    </Td>
+                  </Tr>
+                );
+              }
+            })}
           </Tbody>
         </Table>
       </TableContainer>

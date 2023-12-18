@@ -26,7 +26,10 @@ export function Reinscripcion({ student }) {
           <div className="flex gap-5">
             <div>
               <Text fontSize="xl">Materias disponibles:</Text>
-              <TableReinscripcion />
+              <TableReinscripcion
+                semestre={student.semestre}
+                carrera={student.carrera}
+              />
             </div>
 
             <span>
