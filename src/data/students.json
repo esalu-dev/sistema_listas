@@ -63,13 +63,20 @@
       "apellido_paterno": "Bueno",
       "apellido_materno": "Mijares",
       "carrera": "Ingeniería en Sistemas Computacionales",
-      "semestre": "3",
+      "semestre": "2",
       "imgUrl": "https://c-cl.cdn.smule.com/rs-s78/arr/de/d4/3e694568-ee2f-4a5c-b135-845441c2373e.jpg",
       "materias_acreditadas": [
         {
-          "nombre": "Fundamentos de Programación",
-          "calificacion": "10",
-          "maestro": "Cristabebe"
+          "nombre": "Fundamentos de programación",
+          "calificacion": "100"
+        },
+        {
+          "nombre": "Cálculo Diferencial",
+          "calificacion": "90"
+        },
+        {
+          "nombre": "Taller de ética",
+          "calificacion": "85"
         }
       ],
       "horario": []

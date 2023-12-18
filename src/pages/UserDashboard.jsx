@@ -53,7 +53,7 @@ export function UserDashboard() {
         <TabList bg={"white"}>
           <Tab>Perfil</Tab>
           <Tab>Reinscripción</Tab>
-          <Tab>Kárdex de calificaciones</Tab>
+          <Tab>Retícula</Tab>
         </TabList>
 
         <TabPanels className="h-full">
