@@ -3,7 +3,6 @@ import { TableReinscripcion } from "../modal/TableReinscripcion";
 import { Card, CardBody, Divider, Button, CardFooter } from "@chakra-ui/react";
 import { IoCloseOutline } from "react-icons/io5";
 import { useState } from "react";
-import datos from "../../data/students.json";
 
 function calculateAverage(student) {
   let sum = 0;
@@ -17,7 +16,6 @@ function calculateAverage(student) {
 
 export function Reinscripcion({ student }) {
   const [selected, setSelected] = useState([]);
-  const students = datos.estudiantes;
 
   const saveHorario = () => {
     if (selected.length !== 3) {
@@ -27,20 +25,36 @@ export function Reinscripcion({ student }) {
     const horario = selected.map((materia) => {
       return {
         nombre: materia.nombre,
-        profesor: materia.profesor,
-        hora: materia.hora,
-        aula: materia.aula,
+        creditos:
+          materia.dias === "Lunes, Martes, Miercoles, Jueves, Viernes"
+            ? "5"
+            : "4",
+        horario: materia.hora,
+        salon: materia.aula,
       };
     });
-    const newStudent = {
-      ...student,
-      horario,
+    const num_control = student.num_control;
+    console.log(num_control);
+    console.log(horario);
+
+    const url = `http://localhost:3000/estudiantes/${num_control}/actualizar-horario`;
+    const actualizarHorarioEnElServidor = async () => {
+      try {
+        const response = await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ horario: horario }),
+        });
+
+        const data = await response.json();
+        console.log(data); // Puedes manejar la respuesta del servidor aquí
+      } catch (error) {
+        console.error("Error al actualizar el horario:", error);
+      }
     };
-    const index = students.findIndex(
-      (student) => student.matricula === newStudent.matricula
-    );
-    students[index] = newStudent;
-    console.log(newStudent);
+    actualizarHorarioEnElServidor();
   };
 
   const handleClick = (materia) => {

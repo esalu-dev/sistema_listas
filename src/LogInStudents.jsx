@@ -10,11 +10,9 @@ import {
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { AlertDialogIncomplete } from "./AlertDialog";
-import datos from "./data/students.json";
 import { useNavigate } from "react-router-dom";
 
 export function LogInStudents() {
-  const estudiantes = datos.estudiantes;
   const [show, setShow] = useState(false);
   const handleShow = () => setShow(!show);
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -23,6 +21,23 @@ export function LogInStudents() {
   const handleClear = () => {
     createLinkedList();
   };
+
+  const [estudiantes, setEstudiantes] = useState([]);
+
+  useEffect(() => {
+    const obtenerEstudiantes = async () => {
+      try {
+        const response = await fetch("http://localhost:3000/estudiantes");
+        const data = await response.json();
+        console.log(data);
+        setEstudiantes(data.estudiantes);
+      } catch (error) {
+        console.error("Error al obtener estudiantes:", error);
+      }
+    };
+
+    obtenerEstudiantes();
+  }, []);
 
   function createLinkedList() {
     let head = null;
