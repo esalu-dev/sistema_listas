@@ -8,7 +8,7 @@ import {
   InputGroup,
   useDisclosure,
 } from "@chakra-ui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AlertDialogIncomplete } from "./AlertDialog";
 import datos from "./data/students.json";
 import { useNavigate } from "react-router-dom";
@@ -19,6 +19,69 @@ export function LogInStudents() {
   const handleShow = () => setShow(!show);
   const { isOpen, onOpen, onClose } = useDisclosure();
   let navigate = useNavigate();
+
+  const handleClear = () => {
+    createLinkedList();
+  };
+
+  function createLinkedList() {
+    let head = null;
+    let tail = null;
+    let size = 0;
+
+    function Node(value) {
+      this.value = value;
+      this.next = null;
+    }
+
+    this.push = function (value) {
+      const node = new Node(value);
+      if (!head) {
+        head = node;
+        tail = node;
+      } else {
+        tail.next = node;
+        tail = node;
+      }
+      size++;
+    };
+
+    this.pop = function () {
+      if (!head) {
+        return null;
+      } else {
+        let current = head;
+        let previous = null;
+        while (current.next) {
+          previous = current;
+          current = current.next;
+        }
+        tail = previous;
+        tail.next = null;
+        size--;
+        if (size === 0) {
+          head = null;
+          tail = null;
+        }
+        return current.value;
+      }
+    };
+
+    this.getSize = function () {
+      return size;
+    };
+
+    this.print = function () {
+      let current = head;
+      let result = "";
+      while (current) {
+        result += current.value + " -> ";
+        current = current.next;
+      }
+      result += "null";
+      console.log(result);
+    };
+  }
 
   const [valueNumber, setValueNumber] = useState("");
   const [valuePassword, setValuePassword] = useState("");
