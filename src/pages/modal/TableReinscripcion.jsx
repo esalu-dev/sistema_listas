@@ -11,7 +11,7 @@ import {
 } from "@chakra-ui/react";
 import datos from "../../data/materias.json";
 
-export function TableReinscripcion({ semestre, carrera }) {
+export function TableReinscripcion({ semestre, carrera, handleClick }) {
   const materias = datos.materias;
   return (
     <div className="min-w-[1000px]">
@@ -37,8 +37,8 @@ export function TableReinscripcion({ semestre, carrera }) {
               ) {
                 return (
                   <Tr key={materia.nombre} height="120px">
-                    <Td>
-                      {materia.nombre}
+                    <Td maxW="200px">
+                      <p className="">{materia.nombre}</p>
                       <p>
                         <b>{materia.profesor}</b>
                       </p>
@@ -73,6 +73,7 @@ export function TableReinscripcion({ semestre, carrera }) {
                         _hover={{ bg: "guinda.400" }}
                         _active={{ bg: "guinda.950" }}
                         variant="solid"
+                        onClick={() => handleClick(materia)}
                       >
                         Seleccionar
                       </Button>
