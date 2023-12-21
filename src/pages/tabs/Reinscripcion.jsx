@@ -3,6 +3,7 @@ import { TableReinscripcion } from "../modal/TableReinscripcion";
 import { Card, CardBody, Divider, Button, CardFooter } from "@chakra-ui/react";
 import { IoCloseOutline } from "react-icons/io5";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function calculateAverage(student) {
   let sum = 0;
@@ -15,6 +16,7 @@ function calculateAverage(student) {
 }
 
 export function Reinscripcion({ student }) {
+  const navigate = useNavigate();
   const [selected, setSelected] = useState([]);
 
   const saveHorario = () => {
@@ -55,6 +57,8 @@ export function Reinscripcion({ student }) {
       }
     };
     actualizarHorarioEnElServidor();
+    alert("Horario guardado. Vuelve a iniciar sesión!");
+    navigate("/students", { state: student });
   };
 
   const handleClick = (materia) => {
