@@ -12,13 +12,23 @@ function calculateAverage(student) {
     sum += Number(materia.calificacion);
     count++;
   });
-  return sum / count;
+  let promedio = sum / count;
+  return Math.round(promedio * 100) / 100;
 }
 
 export function Reinscripcion({ student }) {
   const navigate = useNavigate();
   const [selected, setSelected] = useState([]);
-
+  const days = [
+    "Domingo",
+    "Lunes",
+    "Martes",
+    "Miercoles",
+    "Jueves",
+    "Viernes",
+    "Sabado",
+  ];
+  const date = new Date();
   const saveHorario = () => {
     if (selected.length !== 3) {
       alert("Debes seleccionar 3 materias");
@@ -77,6 +87,16 @@ export function Reinscripcion({ student }) {
       ) : (
         <section>
           <Text fontSize={"2xl"}>Promedio: {calculateAverage(student)}</Text>
+          <Text fontSize={"lg"}>
+            Hora asignada: {calculateAverage(student) > 9 && "9:00 AM"}{" "}
+            {calculateAverage(student) > 8 &&
+              calculateAverage(student) < 9 &&
+              "11:00 AM"}{" "}
+            {calculateAverage(student) > 7 &&
+              calculateAverage(student) < 8 &&
+              "1:00 PM"}{" "}
+            Día: {days[date.getDay()]}
+          </Text>
           <div className="flex gap-5">
             <div>
               <Text fontSize="xl">Materias disponibles:</Text>
