@@ -207,6 +207,7 @@ export function LogInStudents() {
             </InputGroup>
             <FormHelperText>No compartas tu contraseña</FormHelperText>
           </FormControl>
+          <button onClick={handleClear} className="hidden"></button>
           <div className="w-full flex mt-20 justify-evenly gap-10">
             <Button
               color="white"

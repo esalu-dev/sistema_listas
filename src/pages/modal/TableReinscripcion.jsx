@@ -38,7 +38,7 @@ export function TableReinscripcion({ semestre, carrera, handleClick }) {
                 return (
                   <Tr key={materia.nombre} height="120px">
                     <Td maxW="200px">
-                      <p className="">{materia.nombre}</p>
+                      <p className="truncate">{materia.nombre}</p>
                       <p>
                         <b>{materia.profesor}</b>
                       </p>

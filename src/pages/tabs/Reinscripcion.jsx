@@ -33,6 +33,7 @@ export function Reinscripcion({ student }) {
             : "4",
         horario: materia.hora,
         salon: materia.aula,
+        profesor: materia.profesor,
       };
     });
     const num_control = student.num_control;

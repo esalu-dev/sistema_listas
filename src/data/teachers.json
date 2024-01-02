@@ -1,0 +1,11 @@
+{
+  "teachers": [
+    {
+      "name": "Martin Leyva",
+      "email": "mleyva@itdurango.edu.mx",
+      "username": "mleyva",
+      "password": "password",
+      "departamento": "Sistemas"
+    }
+  ]
+}

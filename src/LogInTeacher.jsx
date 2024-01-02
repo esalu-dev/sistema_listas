@@ -8,7 +8,7 @@ import {
   InputGroup,
   useDisclosure,
 } from "@chakra-ui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AlertDialogIncomplete } from "./AlertDialog";
 import { useNavigate } from "react-router-dom";
 
@@ -23,13 +23,68 @@ export function LogInTeacher() {
   const [valuePassword, setValuePassword] = useState("");
   const handleChangeUser = (event) => setValueUser(event.target.value);
   const handleChangePassword = (event) => setValuePassword(event.target.value);
+  const [alertData, setAlertData] = useState({ title: "", body: "" });
+
+  const [teachers, setTeachers] = useState([]);
+
+  useEffect(() => {
+    const obtenerTeachers = async () => {
+      try {
+        const response = await fetch("http://localhost:3000/maestros");
+        const data = await response.json();
+        console.log(data);
+        setTeachers(data.teachers);
+      } catch (error) {
+        console.error("Error al obtener teachers:", error);
+      }
+    };
+
+    obtenerTeachers();
+  }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    let newAlertData = { title: "", body: "" };
+
     if (valueUser === "" || valuePassword === "") {
-      onOpen();
-      return;
+      newAlertData = {
+        title: "Datos incompletos",
+        body: "Por favor, llena todos los campos",
+      };
+    } else {
+      const teacher = teachers.find(
+        (teacher) => teacher.username === valueUser
+      );
+
+      if (teacher === undefined) {
+        newAlertData = {
+          title: "Datos incorrectos",
+          body: "El usuario no existe",
+        };
+      } else if (teacher.password !== valuePassword) {
+        newAlertData = {
+          title: "Datos incorrectos",
+          body: "La contraseña es incorrecta",
+        };
+      } else {
+        navigate("/teacher/dashboard", {
+          state: {
+            username: teacher.username,
+            imgUrl: teacher.imgUrl,
+            nombre: teacher.nombre,
+            paterno: teacher.apellido_paterno,
+            materno: teacher.apellido_materno,
+            departamento: teacher.departamento,
+            password: teacher.password,
+          },
+        });
+        return;
+      }
     }
+
+    setAlertData(newAlertData);
+    onOpen();
   };
   return (
     <>
@@ -38,11 +93,15 @@ export function LogInTeacher() {
           <h1 className="text-3xl font-bold mb-20 w-full text-center">
             Iniciar sesión como docente
           </h1>
-          <AlertDialogIncomplete isOpen={isOpen} onClose={onClose} />
+          <AlertDialogIncomplete
+            isOpen={isOpen}
+            onClose={onClose}
+            title={alertData.title}
+            body={alertData.body}
+          />{" "}
           <FormControl>
             <FormLabel>Usuario</FormLabel>
             <Input
-              type="number"
               placeholder="Introduce tu nombre de usuario"
               focusBorderColor="guinda.800"
               onChange={handleChangeUser}
