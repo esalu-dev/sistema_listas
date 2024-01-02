@@ -1,9 +1,10 @@
-import { Text } from "@chakra-ui/react";
+import { Text, useDisclosure } from "@chakra-ui/react";
 import { TableReinscripcion } from "../modal/TableReinscripcion";
 import { Card, CardBody, Divider, Button, CardFooter } from "@chakra-ui/react";
 import { IoCloseOutline } from "react-icons/io5";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { AlertDialogIncomplete } from "../../AlertDialog";
 
 function calculateAverage(student) {
   let sum = 0;
@@ -19,6 +20,9 @@ function calculateAverage(student) {
 export function Reinscripcion({ student }) {
   const navigate = useNavigate();
   const [selected, setSelected] = useState([]);
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [alertData, setAlertData] = useState({ title: "", body: "" });
+
   const days = [
     "Domingo",
     "Lunes",
@@ -31,7 +35,11 @@ export function Reinscripcion({ student }) {
   const date = new Date();
   const saveHorario = () => {
     if (selected.length !== 3) {
-      alert("Debes seleccionar 3 materias");
+      setAlertData({
+        title: "Horario incompleto",
+        body: "Por favor, selecciona 3 materias",
+      });
+      onOpen();
       return;
     }
     const horario = selected.map((materia) => {
@@ -68,8 +76,14 @@ export function Reinscripcion({ student }) {
       }
     };
     actualizarHorarioEnElServidor();
-    alert("Horario guardado. Vuelve a iniciar sesión!");
-    navigate("/students", { state: student });
+    setAlertData({
+      title: "Horario guardado",
+      body: "Vuelve a iniciar sesión! Redireccionando en 3 segundos",
+    });
+    setTimeout(() => {
+      navigate("/students", { state: student });
+    }, 3000);
+    onOpen();
   };
 
   const handleClick = (materia) => {
@@ -80,6 +94,12 @@ export function Reinscripcion({ student }) {
   };
   return (
     <div>
+      <AlertDialogIncomplete
+        isOpen={isOpen}
+        onClose={onClose}
+        title={alertData.title}
+        body={alertData.body}
+      />
       {student.horario.length !== 0 ? (
         <section>
           <Text fontSize={"2xl"}>Tus materias ya están asignadas</Text>
