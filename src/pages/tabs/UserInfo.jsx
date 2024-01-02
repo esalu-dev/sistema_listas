@@ -7,11 +7,15 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { ModalHorario } from "../modal/ModalHorario";
-// import { useLocation, useNavigate } from "react-router-dom";
-// import { Student } from "../../types/Student";
+import { ModalMensajes } from "../modal/ModalMensajes";
 
 export function UserInfo({ student }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const {
+    isOpen: isOpen2,
+    onOpen: onOpen2,
+    onClose: onClose2,
+  } = useDisclosure();
   const handleClick = () => {
     onOpen();
   };
@@ -23,6 +27,7 @@ export function UserInfo({ student }) {
         onClose={onClose}
         horario={student.horario}
       />
+      <ModalMensajes isOpen={isOpen2} onClose={onClose2} />
       <img
         src={student.imgUrl}
         alt="Fondo de foto de perfil"
@@ -67,7 +72,7 @@ export function UserInfo({ student }) {
             </Text>
           </CardBody>
           <CardFooter>
-            <Button>Ver mensajes</Button>
+            <Button onClick={() => onOpen2()}>Ver mensajes</Button>
           </CardFooter>
         </Card>
       </section>
