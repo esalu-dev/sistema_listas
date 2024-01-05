@@ -42,6 +42,40 @@ export function Reinscripcion({ student }) {
       onOpen();
       return;
     }
+    let prerrequisitosAprovados = true;
+    selected.forEach((materia) => {
+      if (materia.prerrequisito !== undefined) {
+        console.log(materia.prerrequisito);
+        const materiaEncontrada = student.materias_acreditadas.find(
+          (materia_acreditada) =>
+            materia_acreditada.nombre === materia.prerrequisito
+        );
+        console.log(materiaEncontrada);
+
+        if (materiaEncontrada) {
+          console.log("Calificaión: " + materiaEncontrada.calificacion);
+          console.log("Aprovada? " + parseInt(materiaEncontrada.calificacion));
+          if (parseInt(materiaEncontrada.calificacion.trim()) < 70) {
+            console.log("No aprobada");
+            prerrequisitosAprovados = false;
+            setAlertData({
+              title: "Horario incompleto",
+              body:
+                "Por favor, acredita los prerrequisitos de las materias seleccionadas. No has acreditado el prerrequisito de " +
+                materia.nombre +
+                " (" +
+                materia.prerrequisito +
+                ")",
+            });
+            onOpen();
+            return;
+          }
+        }
+      }
+    });
+    if (!prerrequisitosAprovados) {
+      return;
+    }
     const horario = selected.map((materia) => {
       return {
         nombre: materia.nombre,
