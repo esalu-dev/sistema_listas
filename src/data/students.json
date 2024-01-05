@@ -35,26 +35,7 @@
           "calificacion": "95"
         }
       ],
-      "horario": [
-        {
-          "nombre": "Estructura de datos",
-          "creditos": "5",
-          "horario": "8:00-9:00",
-          "salon": "SC-3"
-        },
-        {
-          "nombre": "Desarrollo sustentable",
-          "creditos": "4",
-          "horario": "9:00-10:00",
-          "salon": "SC-3"
-        },
-        {
-          "nombre": "Cálculo Vectorial",
-          "creditos": "5",
-          "horario": "7:00-8:00",
-          "salon": "SC-3"
-        }
-      ]
+      "horario": []
     },
     {
       "num_control": "22041104",

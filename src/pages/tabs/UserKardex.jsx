@@ -60,11 +60,14 @@ export function UserKardex({ student }) {
                       <b>{materiasConCalificaciones[materia.nombre]}</b>
                     </Text>
                   </CardBody>
-                  <CardFooter>
-                    <Text>
-                      Maestro: <b>{materia.profesor}</b>
-                    </Text>
-                  </CardFooter>
+                  {materiasEnCurso[materia.nombre] && (
+                    <CardFooter>
+                      <Text>
+                        Maestro:{" "}
+                        <b>{materiasEnCurso[materia.nombre].profesor}</b>
+                      </Text>
+                    </CardFooter>
+                  )}
                 </Card>
               </div>
             ))}
